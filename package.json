@@ -1,0 +1,11 @@
+{
+  "name": "truck-service-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lead-generation landing page for heavy vehicle service",
+  "scripts": {
+    "dev": "node src/server.js",
+    "start": "node src/server.js"
+  },
+  "engines": { "node": ">=20" }
+}
