@@ -80,7 +80,7 @@ async function lead(req, res) {
     const delivery = await deliverLead({ name, phone, comment, page: safeText(input.page, 200) || "/", date: now.toLocaleDateString("uk-UA"), time: now.toLocaleTimeString("uk-UA") });
     if (!delivery.configured) return sendJson(res, 503, { error: "Форма ще не налаштована. Будь ласка, зателефонуйте нам." });
     sendJson(res, 200, { ok: true });
-  } catch (error) { sendJson(res, 500, { error: "Не вдалося надіслати заявку. Будь ласка, зателефонуйте нам." }); }
+  } catch (error) { sendJson(res, 500, { error: "DEBUG: " + (error && error.message ? error.message : String(error)) }); }
 }
 function staticFile(req, res, pathname) {
   const requested = pathname === "/" ? "/index.html" : pathname;
