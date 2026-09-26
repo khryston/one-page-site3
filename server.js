@@ -114,9 +114,8 @@ async function lead(req, res) {
     sendJson(res, 200, { ok: true });
 
   } catch (error) {
-    console.error("!!! ПОМИЛКА СЕРВЕРА !!!", error);
-    sendJson(res, 500, { error: "Не вдалося надіслати заявку. Будь ласка, зателефонуйте нам." });
-  }
+  sendJson(res, 500, { error: "DEBUG: " + (error && error.message ? error.message : String(error)) });
+}
 }
 
 function staticFile(req, res, pathname) {
